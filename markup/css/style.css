@@ -467,6 +467,9 @@ body {
   position: relative;
   padding-left: 40px;
 }
+.navigate-profile__item-title > a{
+  color: var(--black);
+}
 .navigate-profile__item-text {
 
 }
