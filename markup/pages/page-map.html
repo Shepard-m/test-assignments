@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/zerostyles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <title>test-assigments</title>
 </head>
 
@@ -102,11 +103,27 @@
           </ul>
         </div>
         <div class="map__content">
-          <img src="../img/reset-big.svg" alt="" class="map__content-reset">
+          <img class="map__content-img" src="../img/reset-big.svg" alt="" class="map__content-reset">
         </div>
       </section>
     </div>
   </main>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    const mapContent = document.querySelector('.map__content');
+    const mapImage = mapContent.querySelector('.map__content-img');
+
+    const map = L.map(mapContent).setView([50.06, 43.2379], 13);
+
+    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    const marker = L.marker([50.067788, 43.229034]).addTo(map);
+    const popup = marker.bindPopup('место проживания')
+  </script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>
