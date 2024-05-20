@@ -63,6 +63,7 @@ function onSelectPageClick(evt) {
       render(component, container)
       clearInterval(1);
       const mapContent = document.querySelector('.map__content');
+      mapContent.innerHTML = ''
       renderMap(mapContent)
       listNavigation[2].classList.remove('header__navigate-item--active');
       listNavigation[0].classList.remove('header__navigate-item--active');
